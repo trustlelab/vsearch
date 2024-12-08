@@ -1,17 +1,20 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-import './App.css'
-import { Button } from "@/components/ui/button"
-function App() {
-  // const [count, setCount] = useState(0)
+import './app/global.css';
+import { ThemeProvider } from "@/components/theme-provider"
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Page from './app/dashboard/page'; // Import Page component
 
+function App() {
   return (
+    // <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
     <>
-      <h1 className="text-2xl font-bold">Hello Vite + React!</h1>
-      <Button>Click me</Button>
+       <Router>
+        <Routes>
+          <Route path="/" element={<Page />} />
+        </Routes>
+      </Router>
     </>
+    // </ThemeProvider>
   )
 }
 
-export default App
+export default App;

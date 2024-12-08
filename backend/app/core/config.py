@@ -6,7 +6,6 @@ from pydantic_settings import BaseSettings
 
 load_dotenv()
 
-
 class Settings(BaseSettings):
     # Application Settings
     APP_NAME: str = os.getenv("APP_NAME", "elderly-care-chatbot")
@@ -18,7 +17,7 @@ class Settings(BaseSettings):
     # API Settings
     API_HOST: str = os.getenv("API_HOST", "0.0.0.0")
     API_PORT: int = int(os.getenv("API_PORT", "8000"))
-    API_PREFIX: str = os.getenv("API_PREFIX", "/api/v2")
+    API_PREFIX: str = os.getenv("API_PREFIX", "/api/v1")
     ALLOWED_ORIGINS: List[str] = os.getenv("ALLOWED_ORIGINS", ["*"])
 
     # Security Settings
